@@ -14,6 +14,7 @@ class LokerController extends ResourceController
     public function index()
     {
         //
+        echo "loker";
     }
 
     /**
@@ -31,8 +32,7 @@ class LokerController extends ResourceController
      *
      * @return mixed
      */
-    public function new()
-    {
+    function new () {
         //
     }
 

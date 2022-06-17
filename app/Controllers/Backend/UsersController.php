@@ -20,9 +20,6 @@ class UsersController extends ResourceController
             'message' => 'My Message',
         ];
 
-        trace();
-
-
         return view('backend/pages/about/about', $data);
 
     }

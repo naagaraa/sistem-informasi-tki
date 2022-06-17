@@ -2,6 +2,12 @@
 
 namespace Config;
 
+use App\Controllers\Auth\LoginController;
+use App\Controllers\Auth\RegisterController;
+use App\Controllers\Backend\DashboardController;
+use App\Controllers\Backend\LaporanController;
+use App\Controllers\Backend\LokerController;
+use App\Controllers\Backend\PerusahaanController;
 use App\Controllers\Backend\UsersController;
 
 // Create a new instance of our RouteCollection class.
@@ -37,9 +43,13 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-
-$routes->get('/home', [UsersController::class, 'index']);
+$routes->get('/', [DashboardController::class, "index"]);
+$routes->get('/loker', [LokerController::class, 'index']);
+$routes->get('/perusahaan', [PerusahaanController::class, 'index']);
+$routes->get('/laporan', [LaporanController::class, 'index']);
+$routes->get('/users', [UsersController::class, 'index']);
+$routes->get('/login', [LoginController::class, 'index']);
+$routes->get('/register', [RegisterController::class, 'index']);
 
 /*
  * --------------------------------------------------------------------

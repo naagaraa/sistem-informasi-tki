@@ -14,6 +14,7 @@ class PerusahaanController extends ResourceController
     public function index()
     {
         //
+        echo "perusahan pages";
     }
 
     /**
@@ -31,8 +32,7 @@ class PerusahaanController extends ResourceController
      *
      * @return mixed
      */
-    public function new()
-    {
+    function new () {
         //
     }
 
