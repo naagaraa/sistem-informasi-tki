@@ -1,0 +1,79 @@
+ERROR - 2022-06-17 03:55:40 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+ERROR - 2022-06-17 03:56:30 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-06-17 03:59:15 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-06-17 03:59:50 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-06-17 04:04:51 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-06-17 04:17:22 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-informasi-tki CHARACTER SET utf8 COLLATE utf8_general_ci' at line 1
+ERROR - 2022-06-17 04:17:49 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-informasi-tki2 CHARACTER SET utf8 COLLATE utf8_general_ci' at line 1
+ERROR - 2022-06-17 04:45:31 --> Invalid default value for 'role'
+ERROR - 2022-06-17 04:46:02 --> Unknown table 'sistem-informasi-tki.tb_users'
+ERROR - 2022-06-17 04:46:06 --> Invalid default value for 'role'
+ERROR - 2022-06-17 04:46:32 --> Invalid default value for 'role'
+ERROR - 2022-06-17 04:52:51 --> Unknown table 'sistem-informasi-tki.tb_users'
+ERROR - 2022-06-17 04:52:51 --> Invalid default value for 'role'
+ERROR - 2022-06-17 04:59:00 --> Invalid default value for 'role'
+ERROR - 2022-06-17 05:17:57 --> Invalid default value for 'role'
+ERROR - 2022-06-17 07:03:32 --> Unknown table 'sistem-informasi-tki.blog'
+CRITICAL - 2022-06-17 08:36:51 --> Invalid file: backend.pages.dashboard.dashboard
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend.pages.dashboard.dashboard')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('backend.pages.dashboard.dashboard', [], true)
+ 3 APPPATH\Controllers\Backend\UsersController.php(17): view('backend.pages.dashboard.dashboard')
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Backend\UsersController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\UsersController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:37:20 --> Invalid file: backend.app
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend.app')
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('backend.app', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('backend/pages/dashboard/dashboard', [], true)
+ 4 APPPATH\Controllers\Backend\UsersController.php(17): view('backend/pages/dashboard/dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Backend\UsersController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\UsersController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:43:24 --> Invalid file: backend/layout/header.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/layout/header.php')
+ 2 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('backend/layout/header', null, true)
+ 3 APPPATH\Views\backend\app.php(7): CodeIgniter\View\View->include('backend/layout/header')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\backend\\app.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('backend/app', [], true)
+ 7 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('backend/pages/about/about', [], true)
+ 8 APPPATH\Controllers\Backend\UsersController.php(17): view('backend/pages/about/about')
+ 9 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Backend\UsersController->index()
+10 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\UsersController))
+11 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:48:54 --> Call to a member function setData() on null
+in APPPATH\Controllers\Backend\UsersController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Backend\UsersController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:49:01 --> Call to a member function setData() on null
+in APPPATH\Controllers\Backend\UsersController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Backend\UsersController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:55:05 --> Argument 2 passed to CodeIgniter\View\View::include() must be of the type array or null, string given, called in E:\Freelance\7.web developer\client 1\sistem-informasi-tki\app\Views\backend\pages\about\about.php on line 4
+in SYSTEMPATH\View\View.php on line 427.
+ 1 APPPATH\Views\backend\pages\about\about.php(4): CodeIgniter\View\View->include('backend/components/menu', 'My title')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\backend\\pages\\about\\about.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('backend/pages/about/about', [], true)
+ 5 APPPATH\Controllers\Backend\UsersController.php(23): view('backend/pages/about/about', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Backend\UsersController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\UsersController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
