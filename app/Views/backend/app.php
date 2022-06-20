@@ -23,3 +23,8 @@
 </div>
 <!--end::Root-->
 <?=$this->include('backend/layout/footer')?>
+<script>
+    $(document).ready(function () {
+        $('#table_id').DataTable();
+    });
+</script>

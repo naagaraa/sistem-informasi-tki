@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
@@ -24,6 +23,11 @@
 		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
+
+		<!-- datatables css -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
