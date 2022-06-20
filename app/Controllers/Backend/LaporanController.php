@@ -9,6 +9,10 @@ class LaporanController extends BaseController
     public function index()
     {
         //
-        echo "laporan";
+        $data = [
+            "title" => "laporan",
+        ];
+
+        return view("backend/pages/laporan/index-laporan", $data);
     }
 }

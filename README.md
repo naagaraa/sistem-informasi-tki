@@ -2,7 +2,7 @@ tema TKI web tenaga kerja
 
 pendaftran/pendataan tki 
 
-"Sepertinya klo teman nya pendaftran/pendataan tki aja mba"
+"Sepertinya klo tema nya pendaftran/pendataan tki aja mba"
 
 "Ama mba soalnya kan saya kerja nya di balai latihan tki jadi aman bisa lah ini"
 

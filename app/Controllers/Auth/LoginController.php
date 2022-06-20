@@ -9,6 +9,6 @@ class LoginController extends BaseController
     public function index()
     {
         //
-        echo "login pages";
+        return view("auth/login");
     }
 }

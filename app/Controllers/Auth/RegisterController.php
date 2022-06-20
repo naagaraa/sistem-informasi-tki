@@ -9,6 +9,6 @@ class RegisterController extends BaseController
     public function index()
     {
         //
-        echo "register pages";
+        return view("auth/register");
     }
 }

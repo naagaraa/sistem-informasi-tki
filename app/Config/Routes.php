@@ -44,10 +44,31 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', [DashboardController::class, "index"]);
+
+// saldo
+$routes->get('/saldo/perusahaan', [LokerController::class, 'index']);
+$routes->get('/saldo/users', [LokerController::class, 'index']);
+
+// loker
 $routes->get('/loker', [LokerController::class, 'index']);
+$routes->get('/loker/show/(:any)', [LokerController::class, 'show']);
+$routes->get('/loker/create', [LokerController::class, 'create']);
+
+// perusahaan
 $routes->get('/perusahaan', [PerusahaanController::class, 'index']);
+$routes->get('/perusahaan/show/(:any)', [PerusahaanController::class, 'show']);
+$routes->get('/perusahaan/create', [PerusahaanController::class, 'create']);
+
+// laporan
 $routes->get('/laporan', [LaporanController::class, 'index']);
+$routes->get('/laporan/show/(:any)', [LaporanController::class, 'index']);
+
+// users
 $routes->get('/users', [UsersController::class, 'index']);
+$routes->get('/users/show/(:any)', [UsersController::class, 'show']);
+$routes->get('/users/create', [UsersController::class, 'create']);
+
+// auth
 $routes->get('/login', [LoginController::class, 'index']);
 $routes->get('/register', [RegisterController::class, 'index']);
 

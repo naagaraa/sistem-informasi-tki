@@ -14,7 +14,12 @@ class LokerController extends ResourceController
     public function index()
     {
         //
-        echo "loker";
+        $data = [
+            "title" => "loker",
+        ];
+
+        return view("backend/pages/loker/index-loker", $data);
+
     }
 
     /**
@@ -25,6 +30,7 @@ class LokerController extends ResourceController
     public function show($id = null)
     {
         //
+        var_dump($id);die;
     }
 
     /**

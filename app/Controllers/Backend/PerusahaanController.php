@@ -14,7 +14,12 @@ class PerusahaanController extends ResourceController
     public function index()
     {
         //
-        echo "perusahan pages";
+        $data = [
+            "title" => "perusahaan",
+        ];
+
+        return view("backend/pages/perusahaan/index-perusahaan", $data);
+
     }
 
     /**

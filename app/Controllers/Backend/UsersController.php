@@ -15,12 +15,10 @@ class UsersController extends ResourceController
     {
         //
         $data = [
-            'title' => 'My title',
-            'heading' => 'My Heading',
-            'message' => 'My Message',
+            "title" => "user management",
         ];
 
-        return view('backend/pages/about/about', $data);
+        return view('backend/pages/users/index-users', $data);
 
     }
 
