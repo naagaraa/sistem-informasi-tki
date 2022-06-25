@@ -50,6 +50,8 @@ class LokerController extends ResourceController
     public function create()
     {
         //
+        return view("backend/pages/loker/create-loker");
+
     }
 
     /**

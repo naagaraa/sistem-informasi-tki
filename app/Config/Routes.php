@@ -4,11 +4,13 @@ namespace Config;
 
 use App\Controllers\Auth\LoginController;
 use App\Controllers\Auth\RegisterController;
-use App\Controllers\Backend\DashboardController;
-use App\Controllers\Backend\LaporanController;
 use App\Controllers\Backend\LokerController;
-use App\Controllers\Backend\PerusahaanController;
 use App\Controllers\Backend\UsersController;
+use App\Controllers\Backend\LaporanController;
+use App\Controllers\Backend\DashboardController;
+use App\Controllers\Backend\PerusahaanController;
+use App\Controllers\Backend\SaldoUsersController;
+use App\Controllers\Backend\SaldoPerusahaanController;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -46,8 +48,8 @@ $routes->set404Override();
 $routes->get('/', [DashboardController::class, "index"]);
 
 // saldo
-$routes->get('/saldo/perusahaan', [LokerController::class, 'index']);
-$routes->get('/saldo/users', [LokerController::class, 'index']);
+$routes->get('/saldo/perusahaan', [SaldoPerusahaanController::class, 'index']);
+$routes->get('/saldo/users', [SaldoUsersController::class, 'index']);
 
 // loker
 $routes->get('/loker', [LokerController::class, 'index']);

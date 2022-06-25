@@ -49,6 +49,8 @@ class PerusahaanController extends ResourceController
     public function create()
     {
         //
+        return view("backend/pages/perusahaan/create-perusahaan");
+
     }
 
     /**

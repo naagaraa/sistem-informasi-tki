@@ -14,6 +14,7 @@ class SaldoPerusahaanController extends ResourceController
     public function index()
     {
         //
+        return view("backend/pages/saldo-perusahaan/saldo-perusahaan");
     }
 
     /**
@@ -31,8 +32,7 @@ class SaldoPerusahaanController extends ResourceController
      *
      * @return mixed
      */
-    public function new()
-    {
+    function new () {
         //
     }
 

@@ -49,6 +49,7 @@ class UsersController extends ResourceController
     public function create()
     {
         //
+        return view('backend/pages/users/create-users');
     }
 
     /**

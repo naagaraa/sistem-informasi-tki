@@ -1,42 +1,22 @@
 <?=$this->extend('backend/app')?>
 
 <?=$this->section('content')?>
-    <!--begin::Content-->
-<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-	<!--begin::Toolbar-->
-	<?=$this->include("backend/components/toolbar")?>
-	<!--end::Toolbar-->
-	<div  id="kt_content_container" class="container">
-        <div class="row pt-5 mt-5">
-            <div class="col-xxl-4">
-                <div class="card">
-                    <div class="card-header my-auto mx-auto ">
-                        <h1 class="pt-5">Index Laporan</h1>
-                    </div>
-                    <div class="card-body mx-5">
-                       <table id="table_id" class="display">
-                            <thead>
-                                <tr>
-                                    <th>Column 1</th>
-                                    <th>Column 2</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Row 1 Data 1</td>
-                                    <td>Row 1 Data 2</td>
-                                </tr>
-                                <tr>
-                                    <td>Row 2 Data 1</td>
-                                    <td>Row 2 Data 2</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<?=$this->include("backend/components/pageheader")?>
+	<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<!-- Small boxes (Stat box) -->
+			<div class="row">
+                <div class="col">
+                    <h1>Index laporan</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptas omnis quibusdam nihil neque consequatur eius, ipsa similique obcaecati officiis alias dolorum accusantium explicabo dignissimos optio iste aliquam illum aut.</p>
                 </div>
-            </div>
-        </div>
-    </div>
+			</div>
+			<!-- /.row -->
+		</div><!-- /.container-fluid -->
+	</section>
+	<!-- /.content -->
 </div>
-<!--end::Content-->
 <?=$this->endSection()?>
