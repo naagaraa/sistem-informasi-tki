@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('users/cread')?>" class="nav-link">
+                <a href="<?=base_url('users/create')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
