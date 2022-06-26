@@ -77,7 +77,7 @@ data master
   - alamat_perusahaan
   - negara_perusahaan
   - deskripsi_perusahaan
-  - foto perusahaan / banner
+  - foto perusahaan / banner (optional)
   - uniqid_keuangan_perusahaan
 
 - saldo_perusahaan
@@ -97,11 +97,23 @@ data master
 
 - loker (master)
   - id
+  - uniqid_perusahaan
   - uniqid_loker
   - status (open/close)
   - nama_posisi
+  - nama_perusahaan
+  - negara_perusahaan
   - jobdesk_deskription (text)
   - kualifikasi_deskription (text)
+  - update_at
+
+- tki_terdaftar
+  - id
+  - uniqid_tki
+  - uniqid_loker
+  - uniqid_user
+  - nama
+  - create_at
   - update_at
 
 - data_terbang

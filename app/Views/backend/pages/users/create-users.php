@@ -3,55 +3,54 @@
 <?=$this->section('content')?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-	<?=$this->include("backend/components/pageheader")?>
+	<?php //$this->include("backend/components/pageheader")?>
 	<!-- Main content -->
 	<section class="content">
 		<div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
 			<div class="row">
 				<div class="col">
-					<h1>Users create</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptas omnis quibusdam nihil neque consequatur eius, ipsa similique obcaecati officiis alias dolorum accusantium explicabo dignissimos optio iste aliquam illum aut.</p>
+					<h1>Tambah User</h1>
+					<p>Tambah User Baru</p>
 				</div>
 				<div class="col-12">
 					<!-- general form elements -->
 					<div class="card card-primary">
 						<div class="card-header">
-							<h3 class="card-title">Quick Example</h3>
+							<h3 class="card-title">Tambah Users</h3>
 						</div>
 						<!-- /.card-header -->
 						<!-- form start -->
 						<form>
 							<div class="card-body">
 								<div class="form-group">
-									<label for="exampleInputEmail1">Email address</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+									<label for="nama-user">nama</label>
+									<input type="text" class="form-control" id="nama-user" placeholder="masukan nama">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									<label for="email-user">email</label>
+									<input type="email" class="form-control" id="email-user" placeholder="email">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputFile">File input</label>
-									<div class="input-group">
-										<div class="custom-file">
-											<input type="file" class="custom-file-input" id="exampleInputFile">
-											<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-										</div>
-										<div class="input-group-append">
-											<span class="input-group-text">Upload</span>
-										</div>
-									</div>
+									<label for="handphone-user">handphone</label>
+									<input type="number" class="form-control" id="handphone-user" placeholder="masukan handphone">
 								</div>
-								<div class="form-check">
-									<input type="checkbox" class="form-check-input" id="exampleCheck1">
-									<label class="form-check-label" for="exampleCheck1">Check me out</label>
+								<div class="form-group">
+									<label for="alamat-user">alamat</label>
+									<textarea type="text" class="form-control" id="alamat-user" placeholder="masukan alamat">masukan alamat user</textarea>
+								</div>
+								<div class="form-group">
+									<select class="custom-select">
+										<option selected>akses</option>
+										<option value="1">TKI</option>
+										<option value="2">Pengawai</option>
+									</select>
 								</div>
 							</div>
 							<!-- /.card-body -->
 
 							<div class="card-footer">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Simpan</button>
 							</div>
 						</form>
 					</div>

@@ -15,6 +15,10 @@ class Loker extends Migration
                 'type' => 'INT',
                 'constraint' => 100,
             ],
+            'perusahaan_uniqid' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ],
             'loker_uniqid' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
@@ -25,6 +29,18 @@ class Loker extends Migration
                 'null' => true,
             ],
             'nama_posisi' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+                'null' => true,
+                'default' => 0,
+            ],
+            'nama_perusahaan' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+                'null' => true,
+                'default' => 0,
+            ],
+            'negara_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => true,

@@ -10,49 +10,47 @@
 			<!-- Small boxes (Stat box) -->
 			<div class="row">
 				<div class="col">
-					<h1>Perusahaan Create</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptas omnis quibusdam nihil neque consequatur eius, ipsa similique obcaecati officiis alias dolorum accusantium explicabo dignissimos optio iste aliquam illum aut.</p>
+					<h1>Tambah Data Perusahaan</h1>
+					<p>tambah data perusahaan baru</p>
 				</div>
 			</div>
 			<div class="col-12">
 					<!-- general form elements -->
 					<div class="card card-primary">
 						<div class="card-header">
-							<h3 class="card-title">Quick Example</h3>
+							<h3 class="card-title">Tambah</h3>
 						</div>
 						<!-- /.card-header -->
 						<!-- form start -->
 						<form>
 							<div class="card-body">
 								<div class="form-group">
-									<label for="exampleInputEmail1">Email address</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+									<label for="perusahaan">Nama Perusahaan</label>
+									<input type="text" class="form-control" id="perusahaan" placeholder="Nama Perusahaan">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									<label for="alamatperusahaan">Alamat</label>
+									<textarea type="text" class="form-control" id="alamatperusahaan">alamat</textarea>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputFile">File input</label>
-									<div class="input-group">
-										<div class="custom-file">
-											<input type="file" class="custom-file-input" id="exampleInputFile">
-											<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-										</div>
-										<div class="input-group-append">
-											<span class="input-group-text">Upload</span>
-										</div>
-									</div>
+									<label for="negaraperusahaan">Nama negara</label>
+									<input type="text" class="form-control" id="negaraperusahaan" placeholder="Nama Negara">
 								</div>
-								<div class="form-check">
-									<input type="checkbox" class="form-check-input" id="exampleCheck1">
-									<label class="form-check-label" for="exampleCheck1">Check me out</label>
+								<div class="form-group">
+									<label for="alamatperusahaan">Deskripsi Perusahaan</label>
+									<textarea type="text" class="form-control" id="alamatperusahaan">Deskripsi Perusahaan</textarea>
+								</div>
+								<div class="form-group">
+									<label for="saldoperusahaan">Saldo Perusahaan</label>
+									<br>
+									<span>saldo yang akan disediakan perusahaan 3jt/1 karyawan</span>
+									<input type="number" class="form-control" id="saldoperusahaan" placeholder="30000">
 								</div>
 							</div>
 							<!-- /.card-body -->
 
 							<div class="card-footer">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Simpan</button>
 							</div>
 						</form>
 					</div>
