@@ -59,7 +59,8 @@ $routes->get('/loker/create', [LokerController::class, 'create']);
 // perusahaan
 $routes->get('/perusahaan', [PerusahaanController::class, 'index']);
 $routes->get('/perusahaan/show/(:any)', [PerusahaanController::class, 'show']);
-$routes->get('/perusahaan/create', [PerusahaanController::class, 'create']);
+$routes->get('/perusahaan/create', [PerusahaanController::class, 'indexCreate']);
+$routes->post('/perusahaan/create', [PerusahaanController::class, 'create']);
 
 // laporan
 $routes->get('/laporan', [LaporanController::class, 'index']);

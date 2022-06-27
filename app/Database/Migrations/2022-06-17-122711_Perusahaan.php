@@ -27,7 +27,7 @@ class Perusahaan extends Migration
                 'constraint' => 100,
                 'null' => true,
             ],
-            'alamat' => [
+            'alamat_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => true,

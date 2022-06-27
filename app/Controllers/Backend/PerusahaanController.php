@@ -37,8 +37,9 @@ class PerusahaanController extends ResourceController
      *
      * @return mixed
      */
-    function new () {
-        //
+    function indexCreate() {
+        // code
+        return view("backend/pages/perusahaan/create-perusahaan");
     }
 
     /**
@@ -49,7 +50,29 @@ class PerusahaanController extends ResourceController
     public function create()
     {
         //
-        return view("backend/pages/perusahaan/create-perusahaan");
+        $data_perusahaan = [
+            'perusahaan_uniqid' => uniqid(),
+            'nama_perusahaan' => $this->request->getPost('nama-perusahaan'),
+            'alamat_perusahaan' => $this->request->getPost('alamat-perusahaan'),
+            'negara_perusahaan' => $this->request->getPost('nama-negara'),
+            'deskripsi_perusahaan' => $this->request->getPost('deskripsi-perusahaan'),
+            'saldo-perusahaan' => $this->request->getPost('saldo-perusahaan'),
+            'keuangan_perusahaan_uniqid' => uniqid(),
+            'update_by' => 'owner',
+            'create_at' => date("d-m-y"),
+            'update_at' => date("d-m-y")
+        ];
+
+        $data_saldo = [
+            'keuangan_perusahaan_uniqid' => uniqid(),
+            'nama_perusahaan' => $this->request->getPost('nama-perusahaan'),
+            'debit_saldo' => $this->request->getPost('saldo-perusahaan'),
+            'kredit_saldo' => 0,
+            'update_at' => date("d-m-y")
+        ];
+
+
+        dd($this->request->getPost());
 
     }
 

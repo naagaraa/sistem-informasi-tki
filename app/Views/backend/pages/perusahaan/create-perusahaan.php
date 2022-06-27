@@ -22,29 +22,30 @@
 						</div>
 						<!-- /.card-header -->
 						<!-- form start -->
-						<form>
+						<form method="POST" action="<?= base_url("perusahaan/create") ?>">
+						<?= csrf_field() ?>
 							<div class="card-body">
 								<div class="form-group">
 									<label for="perusahaan">Nama Perusahaan</label>
-									<input type="text" class="form-control" id="perusahaan" placeholder="Nama Perusahaan">
+									<input name="nama-perusahan" type="text" class="form-control" id="perusahaan" placeholder="Nama Perusahaan">
 								</div>
 								<div class="form-group">
 									<label for="alamatperusahaan">Alamat</label>
-									<textarea type="text" class="form-control" id="alamatperusahaan">alamat</textarea>
+									<textarea name="alamat-perusahaan" type="text" class="form-control" id="alamatperusahaan">alamat</textarea>
 								</div>
 								<div class="form-group">
 									<label for="negaraperusahaan">Nama negara</label>
-									<input type="text" class="form-control" id="negaraperusahaan" placeholder="Nama Negara">
+									<input name="nama-negara" type="text" class="form-control" id="negaraperusahaan" placeholder="Nama Negara">
 								</div>
 								<div class="form-group">
 									<label for="alamatperusahaan">Deskripsi Perusahaan</label>
-									<textarea type="text" class="form-control" id="alamatperusahaan">Deskripsi Perusahaan</textarea>
+									<textarea name="deskripsi-perusahaan" type="text" class="form-control" id="alamatperusahaan">Deskripsi Perusahaan</textarea>
 								</div>
 								<div class="form-group">
 									<label for="saldoperusahaan">Saldo Perusahaan</label>
 									<br>
 									<span>saldo yang akan disediakan perusahaan 3jt/1 karyawan</span>
-									<input type="number" class="form-control" id="saldoperusahaan" placeholder="30000">
+									<input name="saldo-perusahaan" type="number" class="form-control" id="saldoperusahaan" placeholder="30000">
 								</div>
 							</div>
 							<!-- /.card-body -->
