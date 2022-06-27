@@ -26,22 +26,22 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label for="nama-user">nama</label>
-									<input type="text" class="form-control" id="nama-user" placeholder="masukan nama">
+									<input name="nama-user" type="text" class="form-control" id="nama-user" placeholder="masukan nama">
 								</div>
 								<div class="form-group">
 									<label for="email-user">email</label>
-									<input type="email" class="form-control" id="email-user" placeholder="email">
+									<input name="email-user" type="email" class="form-control" id="email-user" placeholder="email">
 								</div>
 								<div class="form-group">
 									<label for="handphone-user">handphone</label>
-									<input type="number" class="form-control" id="handphone-user" placeholder="masukan handphone">
+									<input name="handphone-user" type="number" class="form-control" id="handphone-user" placeholder="masukan handphone">
 								</div>
 								<div class="form-group">
 									<label for="alamat-user">alamat</label>
-									<textarea type="text" class="form-control" id="alamat-user" placeholder="masukan alamat">masukan alamat user</textarea>
+									<textarea name="alamat-user" type="text" class="form-control" id="alamat-user" placeholder="masukan alamat">masukan alamat user</textarea>
 								</div>
 								<div class="form-group">
-									<select class="custom-select">
+									<select name="akses-user" class="custom-select">
 										<option selected>akses</option>
 										<option value="1">TKI</option>
 										<option value="2">Pengawai</option>

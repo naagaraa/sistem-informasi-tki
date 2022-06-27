@@ -56,10 +56,14 @@ class UsersController extends ResourceController
     {
         //
         $datauser = [
-
+            'nama_user' => $this->request->getPost('nama-user'),
+            'email_user' => $this->request->getPost('email-user'),
+            'hanphone_user' => $this->request->getPost('handphone-user'),
+            'alamat_user' => $this->request->getPost('alamat-user'),
+            'akses_user' => $this->request->getPost('akses-user')
         ];
 
-        dd("hai");
+        dd($datauser);
     }
 
     /**
