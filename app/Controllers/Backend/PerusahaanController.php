@@ -30,6 +30,7 @@ class PerusahaanController extends ResourceController
     public function show($id = null)
     {
         //
+        echo "perusahaan method show id - {$id}";
     }
 
     /**
@@ -88,6 +89,7 @@ class PerusahaanController extends ResourceController
     public function edit($id = null)
     {
         //
+        echo "perusahaan method edit id - {$id}";
     }
 
     /**

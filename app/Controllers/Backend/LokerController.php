@@ -41,7 +41,7 @@ class LokerController extends ResourceController
     public function show($id = null)
     {
         //
-        var_dump($id);die;
+        echo "loker method show id - {$id}";
     }
 
     /**
@@ -89,6 +89,7 @@ class LokerController extends ResourceController
     public function edit($id = null)
     {
         //
+        echo "loker method edit id - {$id}";
     }
 
     /**

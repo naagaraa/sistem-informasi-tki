@@ -36,6 +36,7 @@ class UsersController extends ResourceController
     public function show($id = null)
     {
         //
+        echo "users method show id - {$id}";
     }
 
     /**
@@ -74,6 +75,7 @@ class UsersController extends ResourceController
     public function edit($id = null)
     {
         //
+        echo "users method edit id - {$id}";
     }
 
     /**

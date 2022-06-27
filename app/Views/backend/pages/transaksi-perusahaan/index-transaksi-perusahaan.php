@@ -36,7 +36,7 @@
 										</td>
 										<td>singapore</td>
 										<td>
-                                 <a href="#" class="btn btn-primary">Detail transaction</a>
+                                 <a href="<?= base_url('transaksi/perusahaan/00001') ?>" class="btn btn-primary">Detail transaction</a>
                               </td>
 									</tr>
 									<tr>
@@ -45,7 +45,7 @@
 										</td>
 										<td>singapore</td>
 										<td>
-                                 <a href="#" class="btn btn-primary">Detail transaction</a>
+                                 <a href="<?= base_url('transaksi/perusahaan/00002') ?>" class="btn btn-primary">Detail transaction</a>
                               </td>
 									</tr>
 							</table>

@@ -55,12 +55,14 @@ $routes->get('/saldo/users', [SaldoUsersController::class, 'index']);
 // loker
 $routes->get('/loker', [LokerController::class, 'index']);
 $routes->get('/loker/show/(:any)', [LokerController::class, 'show']);
+$routes->get('/loker/edit/(:any)', [LokerController::class, 'edit']);
 $routes->get('/loker/create', [LokerController::class, 'indexCreate']);
 $routes->post('/loker/create', [LokerController::class, 'create']);
 
 // perusahaan
 $routes->get('/perusahaan', [PerusahaanController::class, 'index']);
 $routes->get('/perusahaan/show/(:any)', [PerusahaanController::class, 'show']);
+$routes->get('/perusahaan/edit/(:any)', [PerusahaanController::class, 'edit']);
 $routes->get('/perusahaan/create', [PerusahaanController::class, 'indexCreate']);
 $routes->post('/perusahaan/create', [PerusahaanController::class, 'create']);
 
@@ -70,11 +72,14 @@ $routes->get('/laporan/show/(:any)', [LaporanController::class, 'index']);
 
 // transaksi
 $routes->get('/transaksi/perusahaan', [TransaktionController::class, 'indexPerusahaan']);
+$routes->get('/transaksi/perusahaan/(:any)', [TransaktionController::class, 'showTransaksiPerusahaan']);
 $routes->get('/transaksi/users', [TransaktionController::class, 'indexUsers']);
+$routes->get('/transaksi/users/(:any)', [TransaktionController::class, 'showTransaksiUsers']);
 
 // users
 $routes->get('/users', [UsersController::class, 'index']);
 $routes->get('/users/show/(:any)', [UsersController::class, 'show']);
+$routes->get('/users/edit/(:any)', [UsersController::class, 'edit']);
 $routes->get('/users/create', [UsersController::class, 'indexCreate']);
 $routes->post('/users/create', [UsersController::class, 'create']);
 

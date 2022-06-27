@@ -38,7 +38,7 @@
 										<td>singapore</td>
 										<td>backend dev</td>
 										<td>
-                                 <a href="#" class="btn btn-primary">Detail transaction</a>
+                                 <a href="<?= base_url('/transaksi/users/0001') ?>" class="btn btn-primary">Detail transaction</a>
                               </td>
 									</tr>
 									<tr>
@@ -48,7 +48,7 @@
 										<td>singapore</td>
 										<td>front end dev</td>
 										<td>
-                                 <a href="#" class="btn btn-primary">Detail transaction</a>
+                                 <a href="<?= base_url('/transaksi/users/0002') ?>" class="btn btn-primary">Detail transaction</a>
                               </td>
 									</tr>
 							</table>

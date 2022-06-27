@@ -186,7 +186,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url('transaksi')?>" class="nav-link">
+            <a href="<?=base_url('transaksi/users')?>" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Transaksi

@@ -42,7 +42,7 @@
 										<td>tki</td>
 										<td>20 juni 2020</td>
 										<td>
-											<a href="#" class="btn btn-primary">
+											<a href="<?= base_url("users/edit/0001") ?>" class="btn btn-primary">
 												edit
 											</a>
 											<a href="#" class="btn btn-danger">
