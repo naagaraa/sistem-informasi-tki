@@ -10,6 +10,7 @@ use App\Controllers\Backend\LaporanController;
 use App\Controllers\Backend\DashboardController;
 use App\Controllers\Backend\PerusahaanController;
 use App\Controllers\Backend\SaldoUsersController;
+use App\Controllers\Backend\TransaktionController;
 use App\Controllers\Backend\SaldoPerusahaanController;
 
 // Create a new instance of our RouteCollection class.
@@ -66,6 +67,10 @@ $routes->post('/perusahaan/create', [PerusahaanController::class, 'create']);
 // laporan
 $routes->get('/laporan', [LaporanController::class, 'index']);
 $routes->get('/laporan/show/(:any)', [LaporanController::class, 'index']);
+
+// transaksi
+$routes->get('/transaksi/perusahaan', [TransaktionController::class, 'indexPerusahaan']);
+$routes->get('/transaksi/users', [TransaktionController::class, 'indexUsers']);
 
 // users
 $routes->get('/users', [UsersController::class, 'index']);

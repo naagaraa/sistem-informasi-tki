@@ -115,7 +115,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url('transaksi')?>" class="nav-link">
+            <a href="<?=base_url('transaksi/perusahaan')?>" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Transaksi
@@ -123,7 +123,7 @@
             </a>
           </li>
           <li class="nav-header">General</li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
@@ -145,8 +145,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -168,7 +168,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="<?=base_url('loker')?>" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
