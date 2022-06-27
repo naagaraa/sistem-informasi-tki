@@ -21,7 +21,8 @@
 						</div>
 						<!-- /.card-header -->
 						<!-- form start -->
-						<form>
+						<form method="POST" action="" >
+							<?= csrf_field() ?>
 							<div class="card-body">
 								<div class="form-group">
 									<label for="nama-user">nama</label>

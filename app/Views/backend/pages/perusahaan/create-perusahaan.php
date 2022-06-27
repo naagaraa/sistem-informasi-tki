@@ -27,7 +27,7 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label for="perusahaan">Nama Perusahaan</label>
-									<input name="nama-perusahan" type="text" class="form-control" id="perusahaan" placeholder="Nama Perusahaan">
+									<input name="nama-perusahaan" type="text" class="form-control" id="perusahaan" placeholder="Nama Perusahaan">
 								</div>
 								<div class="form-group">
 									<label for="alamatperusahaan">Alamat</label>

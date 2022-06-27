@@ -22,6 +22,12 @@ class UsersController extends ResourceController
 
     }
 
+    public function indexCreate()
+    {
+        // code
+        return view('backend/pages/users/create-users');
+    }
+
     /**
      * Return the properties of a resource object
      *
@@ -49,7 +55,11 @@ class UsersController extends ResourceController
     public function create()
     {
         //
-        return view('backend/pages/users/create-users');
+        $datauser = [
+
+        ];
+
+        dd("hai");
     }
 
     /**

@@ -21,14 +21,15 @@
 						</div>
 						<!-- /.card-header -->
 						<!-- form start -->
-						<form>
+						<form method="POST" action="<?= base_url("loker/create") ?>" >
+							<?= csrf_field() ?>
 							<div class="card-body">
 								<div class="form-group">
 									<label for="namaposisi">posisi yang dibuka</label>
-									<input type="text" class="form-control" id="namaposisi" placeholder="posisi yang dibuka">
+									<input name="posisi-loker" type="text" class="form-control" id="namaposisi" placeholder="posisi yang dibuka">
 								</div>
 								<div class="form-group">
-									<select class="custom-select">
+									<select name="nama-perusahaan" class="custom-select">
 										<option selected>Nama Perusahaan</option>
 										<option value="google">Google</option>
 										<option value="alibaba">Alibaba</option>
@@ -36,7 +37,7 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<select class="custom-select">
+									<select name="negara-perusahaan" class="custom-select">
 										<option selected>Negara</option>
 										<option value="Jepang">Jepang</option>
 										<option value="singapore">singapore</option>
@@ -45,11 +46,11 @@
 								</div>
 								<div class="form-group">
 									<label for="jobdesk_deskription">jobsdesk</label>
-									<textarea type="text" class="form-control" id="jobdesk_deskription">jobdesk deskription</textarea>
+									<textarea name="jobsdesk-loker" type="text" class="form-control" id="jobdesk_deskription">jobdesk deskription</textarea>
 								</div>
 								<div class="form-group">
 									<label for="kualifikasi_deskription">kualifikasi</label>
-									<textarea type="text" class="form-control" id="kualifikasi_deskription">kualifikasi deskription</textarea>
+									<textarea name="kualifikasi-loker" type="text" class="form-control" id="kualifikasi_deskription">kualifikasi deskription</textarea>
 								</div>
 							</div>
 							<!-- /.card-body -->

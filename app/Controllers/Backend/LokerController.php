@@ -22,6 +22,17 @@ class LokerController extends ResourceController
 
     }
 
+     /**
+     * Return an array of resource objects, themselves in array format
+     *
+     * @return mixed
+     */
+    public function indexCreate()
+    {
+        // code here
+        return view("backend/pages/loker/create-loker");
+    }
+
     /**
      * Return the properties of a resource object
      *
@@ -50,7 +61,23 @@ class LokerController extends ResourceController
     public function create()
     {
         //
-        return view("backend/pages/loker/create-loker");
+        $perusahaanRow = "";
+
+        $loker = [
+            'status' => 1,
+            'nama_posisi' => $this->request->getPost('posisi-loker'),
+            'nama_perusahaan' => $this->request->getPost('nama-perusahaan'),
+            'negara_perusahaan' => $this->request->getPost('negara-perusahaan'),
+            'jobdesk_deskription' => $this->request->getPost('jobsdesk-loker'),
+            'kualifikasi_deskription' => $this->request->getPost('kualifikasi-loker'),
+            'update_by' => 'owner',
+            'create_at' => date('d-m-Y'),
+            'update_at' => date("d-m-Y")
+        ];
+
+        dd($loker);
+
+       dd($this->request->getPost());
 
     }
 
