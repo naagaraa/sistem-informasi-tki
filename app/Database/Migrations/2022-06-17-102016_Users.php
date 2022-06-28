@@ -21,33 +21,33 @@ class Users extends Migration
                 'constraint' => '100',
                 'unique' => true,
             ],
-            'nama' => [
+            'nama_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
                 'null' => true,
             ],
-            'email' => [
+            'email_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
                 'unique' => true,
                 'null' => true,
             ],
-            'handphone' => [
+            'handphone_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 15,
                 'null' => true,
             ],
-            'alamat' => [
+            'alamat_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => true,
             ],
-            'role' => [
+            'role_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 1,
                 'default' => 2,
             ],
-            'status' => [
+            'status_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 1,
                 'default' => 1,

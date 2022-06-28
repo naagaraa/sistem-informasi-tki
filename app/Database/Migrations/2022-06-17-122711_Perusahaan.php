@@ -42,12 +42,12 @@ class Perusahaan extends Migration
                 'constraint' => 100,
                 'null' => true,
             ],
-            'foto' => [
+            'foto_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => true,
             ],
-            'keuangan_perusahaan_uniqid' => [
+            'uniqid_keuangan_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => true,

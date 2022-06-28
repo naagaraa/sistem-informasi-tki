@@ -11,11 +11,11 @@ class SaldoPerusahaan extends Migration
     {
         //code here
         $this->forge->addField([
-            'keuangan_perusahaan_id' => [
+            'id_keuangan_perusahaan' => [
                 'type' => 'INT',
                 'constraint' => 100,
             ],
-            'keuangan_perusahaan_uniqid' => [
+            'uniqid_keuangan_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
@@ -42,6 +42,7 @@ class SaldoPerusahaan extends Migration
             ],
 
         ]);
+         $this->forge->addKey('id_keuangan_perusahaan', true);
         $this->forge->createTable('tb_saldo_perusahaan');
 
     }

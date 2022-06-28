@@ -11,15 +11,25 @@ class SaldoTenagaKerja extends Migration
     {
         //
         $this->forge->addField([
-            'keuangan_tki_id' => [
+            'id_keuangan_tki_' => [
                 'type' => 'INT',
                 'constraint' => 100,
             ],
-            'keuangan_tki_uniqid' => [
+            'uniqid_keuangan_tki' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
             'nama_tki' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+                'null' => true,
+            ],
+            'nama_perusahaan' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+                'null' => true,
+            ],
+            'nama_posisi' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => true,
@@ -42,6 +52,7 @@ class SaldoTenagaKerja extends Migration
             ],
 
         ]);
+        $this->forge->addKey('id_keuangan_tki', true);
         $this->forge->createTable('tb_saldo_tki');
 
     }

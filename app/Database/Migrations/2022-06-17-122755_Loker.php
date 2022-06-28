@@ -11,19 +11,19 @@ class Loker extends Migration
     {
         //code here
         $this->forge->addField([
-            'loker_id' => [
+            'id_loker' => [
                 'type' => 'INT',
                 'constraint' => 100,
             ],
-            'perusahaan_uniqid' => [
+            'uniqid_loker' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+            ],
+            'uniqid_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'loker_uniqid' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
-            ],
-            'status' => [
+            'status_loker' => [
                 'type' => 'VARCHAR',
                 'constraint' => 1,
                 'null' => true,
@@ -73,7 +73,7 @@ class Loker extends Migration
             ],
 
         ]);
-        $this->forge->addKey('loker_id', true);
+        $this->forge->addKey('id_loker', true);
         $this->forge->createTable('tb_loker');
     }
 
