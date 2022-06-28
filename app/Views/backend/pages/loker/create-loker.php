@@ -8,6 +8,12 @@
 	<section class="content">
 		<div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
+			<?= session()->getFlashdata('error') ?>
+			<?php if(session()->getFlashdata('success')): ?>
+				<div class="alert alert-success" role="alert">
+					Data berhasil ditambahkan
+				</div>
+			<?php endif ?>
 			<div class="row">
 				<div class="col">
 					<h1>Buat Loker Baru</h1>
@@ -30,18 +36,20 @@
 								</div>
 								<div class="form-group">
 									<select name="nama-perusahaan" class="custom-select">
-										<option selected>Nama Perusahaan</option>
-										<option value="google">Google</option>
-										<option value="alibaba">Alibaba</option>
-										<option value="aws">AWS</option>
+										<?php if(!empty($perusahaan)): ?>
+											<?php foreach($perusahaan as $key => $value): ?>
+												<option value=<?= "{$value->uniqid_perusahaan}-{$value->nama_perusahaan}"; ?>><?= $value->nama_perusahaan ?></option>
+											<?php endforeach; ?>
+										<?php endif; ?>
 									</select>
 								</div>
 								<div class="form-group">
 									<select name="negara-perusahaan" class="custom-select">
-										<option selected>Negara</option>
-										<option value="Jepang">Jepang</option>
-										<option value="singapore">singapore</option>
-										<option value="germany">germany</option>
+										<?php if(!empty($perusahaan)): ?>
+											<?php foreach($perusahaan as $key => $value): ?>
+												<option value=<?= "{$value->uniqid_perusahaan}-{$value->negara_perusahaan}"; ?>><?= $value->negara_perusahaan ?></option>
+											<?php endforeach; ?>
+										<?php endif; ?>
 									</select>
 								</div>
 								<div class="form-group">

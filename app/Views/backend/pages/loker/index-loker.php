@@ -1,9 +1,10 @@
-<?=$this->extend('backend/app')?>
+<?= $this->extend('backend/app') ?>
 
-<?=$this->section('content')?>
+<?= $this->section('content') ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-	<?php //$this->include("backend/components/pageheader")?>
+	<?php //$this->include("backend/components/pageheader")
+	?>
 	<!-- Main content -->
 	<section class="content">
 		<div class="container-fluid">
@@ -33,38 +34,36 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>backend developer
-										</td>
-										<td>Indofood
-										</td>
-										<td>Tokyo Jepang
-										</td>
-										<td>open</td>
-										<td>20 juni 2020</td>
-										<td>
-											<a href="#"  class="btn btn-danger">close</a>
-											<a href="<?= base_url("loker/edit/0001") ?>" class="btn btn-primary">edit</a>
-											<a href="#" class="btn btn-warning">delete</a>
-										</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>Front End developer
-										</td>
-										<td>Indofood
-										</td>
-										<td>Tokyo Jepang
-										</td>
-										<td>open</td>
-										<td>20 juni 2020</td>
-										<td>
-											<a href="#"  class="btn btn-danger" >close</a>
-											<a href="#" class="btn btn-primary">edit</a>
-											<a href="#" class="btn btn-warning">delete</a>
-										</td>
-									</tr>
+									<?php if (!empty($loker)) : ?>
+										<?php $number = 1; ?>
+										<?php foreach ($loker as $key => $value) : ?>
+											<tr>
+												<td><?= $number++ ?></td>
+												<td><?= $value->nama_posisi ?></td>
+												<td><?= $value->nama_perusahaan ?></td>
+												<td><?= $value->negara_perusahaan ?></td>
+												<td><?= $value->status_loker == 1 ? "open" : "close" ?></td>
+												<td><?=  substr( $value->create_at,0,10) ?></td>
+												<td>
+													<a href="#" class="btn btn-danger">close</a>
+													<a href="<?= base_url("loker/edit/0001") ?>" class="btn btn-primary">edit</a>
+													<a href="#" class="btn btn-warning">delete</a>
+												</td>
+											</tr>
+										<?php endforeach; ?>
+									<?php else : ?>
+										<tr>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>
+												No Data
+											</td>
+										</tr>
+									<?php endif; ?>
 							</table>
 						</div>
 						<!-- /.card-body -->
@@ -77,4 +76,4 @@
 	</section>
 	<!-- /.content -->
 </div>
-<?=$this->endSection()?>
+<?= $this->endSection() ?>

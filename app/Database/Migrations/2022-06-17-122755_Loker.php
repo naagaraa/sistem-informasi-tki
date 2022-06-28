@@ -13,7 +13,9 @@ class Loker extends Migration
         $this->forge->addField([
             'id_loker' => [
                 'type' => 'INT',
-                'constraint' => 100,
+                'constraint' => 5,
+                'unsigned' => true,
+                'auto_increment' => true,
             ],
             'uniqid_loker' => [
                 'type' => 'VARCHAR',

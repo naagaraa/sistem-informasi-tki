@@ -34,7 +34,7 @@ class Perusahaan extends Migration
             ],
             'negara_perusahaan' => [
                 'type' => 'VARCHAR',
-                'constraint' => 10,
+                'constraint' => 50,
                 'null' => true,
             ],
             'deskripsi_perusahaan' => [

@@ -13,7 +13,9 @@ class TkiTerdartar extends Migration
          $this->forge->addField([
             'id_tki_terdaftar' => [
                 'type' => 'INT',
-                'constraint' => 100,
+                'constraint' => 5,
+                'unsigned' => true,
+                'auto_increment' => true,
             ],
             'uniqid_tki_terdaftar' => [
                 'type' => 'VARCHAR',
@@ -55,6 +57,6 @@ class TkiTerdartar extends Migration
     public function down()
     {
         //
-        $this->forge->dropTable('id_tki_terdaftar');
+        $this->forge->dropTable('tb_tki_terdaftar');
     }
 }

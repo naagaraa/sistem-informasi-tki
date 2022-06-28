@@ -13,7 +13,9 @@ class SaldoPerusahaan extends Migration
         $this->forge->addField([
             'id_keuangan_perusahaan' => [
                 'type' => 'INT',
-                'constraint' => 100,
+                'constraint' => 5,
+                'unsigned' => true,
+                'auto_increment' => true,
             ],
             'uniqid_keuangan_perusahaan' => [
                 'type' => 'VARCHAR',

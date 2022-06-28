@@ -11,9 +11,11 @@ class SaldoTenagaKerja extends Migration
     {
         //
         $this->forge->addField([
-            'id_keuangan_tki_' => [
+            'id_keuangan_tki' => [
                 'type' => 'INT',
-                'constraint' => 100,
+                'constraint' => 5,
+                'unsigned' => true,
+                'auto_increment' => true,
             ],
             'uniqid_keuangan_tki' => [
                 'type' => 'VARCHAR',

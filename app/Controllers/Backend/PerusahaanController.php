@@ -6,6 +6,12 @@ use CodeIgniter\RESTful\ResourceController;
 
 class PerusahaanController extends ResourceController
 {
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = db_connect();
+    }
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -14,10 +20,14 @@ class PerusahaanController extends ResourceController
     public function index()
     {
         //
+        $tb_perusahaan = $this->db->table('tb_perusahaan');
+        $perusahaan = $tb_perusahaan->get();
+
         $data = [
             "title" => "perusahaan",
+            "perusahaan" => $perusahaan->getResultObject(),
         ];
-
+        
         return view("backend/pages/perusahaan/index-perusahaan", $data);
 
     }
@@ -64,22 +74,24 @@ class PerusahaanController extends ResourceController
             // 'saldo-perusahaan' => $this->request->getPost('saldo-perusahaan'),
             'uniqid_keuangan_perusahaan' => $keuangan_perusahaan_uniqid,
             'update_by' => 'owner',
-            'create_at' => date("d-m-Y"),
-            'update_at' => date("d-m-Y")
+            'create_at' => date("Y-m-d H:i:s"),
+            'update_at' => date("Y-m-d H:i:s")
         ];
 
-        $data_saldo = [
+        $data_saldo_perusahaan = [
             'uniqid_keuangan_perusahaan' => $keuangan_perusahaan_uniqid,
             'nama_perusahaan' => $this->request->getPost('nama-perusahaan'),
             'debit_saldo' => $this->request->getPost('saldo-perusahaan'),
             'kredit_saldo' => 0,
-            'update_at' => date("d-m-Y")
+            'update_at' => date("Y-m-d H:i:s")
         ];
 
-        $db = db_connect();
-        $builder = $db->table('tb_perusahaan');
-        $builder->insert($data_perusahaan);
-        dd($data_perusahaan, $data_saldo);
+        $perusahaan = $this->db->table('tb_perusahaan');
+        $saldo = $this->db->table('tb_saldo_perusahaan');
+        $perusahaan->insert($data_perusahaan);
+        $saldo->insert($data_saldo_perusahaan);
+
+        return redirect()->back()->with('success', 'data berhasil di tambah');
 
     }
 

@@ -31,30 +31,24 @@
 									</tr>
 								</thead>
 								<tbody>
+									<?php if (!empty($perusahaan)): ?>
+									<?php $number = 1;?>
+									<?php foreach ($perusahaan as $key => $value):?>
 									<tr>
-										<td>1</td>
+										<td><?= $number++ ?></td>
 										<td>
-											Indofood
+											<?= $value->nama_perusahaan ?>
 										</td>
-										<td>Indonesia</td>
-										<td>cikarang</td>
+										<td><?= $value->negara_perusahaan ?></td>
+										<td><?= $value->alamat_perusahaan ?></td>
 										<td>
-											<a href="#" class="btn btn-primary">Edit</a>
-											<a href="#" class="btn btn-primary">Delete</a>
+											<a href="#" class="btn btn-primary">Detail</a>
+											<a href="#" class="btn btn-warning">Edit</a>
+											<a href="#" class="btn btn-danger">Delete</a>
 										</td>
 									</tr>
-									<tr>
-										<td>1</td>
-										<td>
-											Indofood
-										</td>
-										<td>Indonesia</td>
-										<td>cikarang</td>
-										<td>
-											<a href="#" class="btn btn-primary">Edit</a>
-											<a href="#" class="btn btn-primary">Delete</a href="#">
-										</td>
-									</tr>
+									<?php endforeach; ?>
+									<?php endif;?>
 								</tbody>
 							</table>
 						</div>

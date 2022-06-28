@@ -13,7 +13,9 @@ class DataTerbang extends Migration
         $this->forge->addField([
             'data_terbang_id' => [
                 'type' => 'INT',
-                'constraint' => 100,
+                'constraint' => 5,
+                'unsigned' => true,
+                'auto_increment' => true,
             ],
             'data_terbang_uniqid' => [
                 'type' => 'VARCHAR',
