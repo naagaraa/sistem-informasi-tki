@@ -36,9 +36,7 @@
 									<?php foreach ($perusahaan as $key => $value):?>
 									<tr>
 										<td><?= $number++ ?></td>
-										<td>
-											<?= $value->nama_perusahaan ?>
-										</td>
+										<td><?= $value->nama_perusahaan ?></td>
 										<td><?= $value->negara_perusahaan ?></td>
 										<td><?= $value->alamat_perusahaan ?></td>
 										<td>
@@ -48,6 +46,14 @@
 										</td>
 									</tr>
 									<?php endforeach; ?>
+									<?php else : ?>
+										<tr>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+											<td>No Data</td>
+										</tr>
 									<?php endif;?>
 								</tbody>
 							</table>
