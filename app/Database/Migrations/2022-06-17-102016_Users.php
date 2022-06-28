@@ -10,13 +10,13 @@ class Users extends Migration
     public function up()
     {
         $this->forge->addField([
-            'user_id' => [
+            'id_user' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'user_uniqid' => [
+            'uniqid_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
                 'unique' => true,
@@ -67,7 +67,7 @@ class Users extends Migration
             ],
 
         ]);
-        $this->forge->addKey('user_id', true);
+        $this->forge->addKey('id_user', true);
         $this->forge->createTable('tb_user');
 
     }

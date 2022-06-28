@@ -13,10 +13,12 @@ class LokerController extends ResourceController
      */
     public function index()
     {
+
         //
         $data = [
             "title" => "loker",
         ];
+        
 
         return view("backend/pages/loker/index-loker", $data);
 

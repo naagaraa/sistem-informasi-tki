@@ -56,27 +56,29 @@ class PerusahaanController extends ResourceController
         $keuangan_perusahaan_uniqid = uniqid();
 
         $data_perusahaan = [
-            'perusahaan_uniqid' => $perusahaan_uniqid,
+            'uniqid_perusahaan' => $perusahaan_uniqid,
             'nama_perusahaan' => $this->request->getPost('nama-perusahaan'),
             'alamat_perusahaan' => $this->request->getPost('alamat-perusahaan'),
             'negara_perusahaan' => $this->request->getPost('nama-negara'),
             'deskripsi_perusahaan' => $this->request->getPost('deskripsi-perusahaan'),
-            'saldo-perusahaan' => $this->request->getPost('saldo-perusahaan'),
-            'keuangan_perusahaan_uniqid' => $keuangan_perusahaan_uniqid,
+            // 'saldo-perusahaan' => $this->request->getPost('saldo-perusahaan'),
+            'uniqid_keuangan_perusahaan' => $keuangan_perusahaan_uniqid,
             'update_by' => 'owner',
             'create_at' => date("d-m-Y"),
             'update_at' => date("d-m-Y")
         ];
 
         $data_saldo = [
-            'keuangan_perusahaan_uniqid' => $keuangan_perusahaan_uniqid,
+            'uniqid_keuangan_perusahaan' => $keuangan_perusahaan_uniqid,
             'nama_perusahaan' => $this->request->getPost('nama-perusahaan'),
             'debit_saldo' => $this->request->getPost('saldo-perusahaan'),
             'kredit_saldo' => 0,
             'update_at' => date("d-m-Y")
         ];
 
-
+        $db = db_connect();
+        $builder = $db->table('tb_perusahaan');
+        $builder->insert($data_perusahaan);
         dd($data_perusahaan, $data_saldo);
 
     }

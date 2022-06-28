@@ -23,7 +23,7 @@ class DataTerbang extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'nama' => [
+            'nama_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 1,
                 'null' => true,

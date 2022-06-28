@@ -11,13 +11,13 @@ class Perusahaan extends Migration
     {
         //code here
         $this->forge->addField([
-            'perusahaan_id' => [
+            'id_perusahaan' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'perusahaan_uniqid' => [
+            'uniqid_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
                 'unique' => true,
@@ -67,7 +67,7 @@ class Perusahaan extends Migration
             ],
 
         ]);
-        $this->forge->addKey('perusahaan_id', true);
+        $this->forge->addKey('id_perusahaan', true);
         $this->forge->createTable('tb_perusahaan');
 
     }
