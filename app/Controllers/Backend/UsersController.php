@@ -6,16 +6,27 @@ use CodeIgniter\RESTful\ResourceController;
 
 class UsersController extends ResourceController
 {
+    private $db;
     /**
      * Return an array of resource objects, themselves in array format
      *
      * @return mixed
      */
+
+    public function __construct()
+    {
+        $this->db = db_connect();
+    } 
+
     public function index()
     {
         //
+        $tb_user = $this->db->table("tb_user");
+        $users = $tb_user->get();
+
         $data = [
             "title" => "user management",
+            "users" => $users->getResultObject(),
         ];
 
         return view('backend/pages/users/index-users', $data);
@@ -57,14 +68,22 @@ class UsersController extends ResourceController
     {
         //
         $datauser = [
+            'uniqid_user' => uniqid(),
             'nama_user' => $this->request->getPost('nama-user'),
             'email_user' => $this->request->getPost('email-user'),
-            'hanphone_user' => $this->request->getPost('handphone-user'),
+            'handphone_user' => $this->request->getPost('handphone-user'),
             'alamat_user' => $this->request->getPost('alamat-user'),
-            'akses_user' => $this->request->getPost('akses-user')
+            'role_user' => $this->request->getPost('akses-user'),
+            'status_user' => 1,
+            'update_by' => "owner",
+            'create_at' => date("Y-m-d H:i:s"),
+            'update_at' => date("Y-m-d H:i:s")
         ];
 
-        dd($datauser);
+        $users = $this->db->table("tb_user");
+        $users->insert($datauser);
+
+        return redirect()->back()->with('success', 'data berhasil di tambah');
     }
 
     /**

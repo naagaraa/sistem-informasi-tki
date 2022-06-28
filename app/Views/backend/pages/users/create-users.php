@@ -8,6 +8,12 @@
 	<section class="content">
 		<div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
+			<?= session()->getFlashdata('error') ?>
+			<?php if(session()->getFlashdata('success')): ?>
+				<div class="alert alert-success" role="alert">
+					data berhasil ditambahkan
+				</div>
+			<?php endif ?>
 			<div class="row">
 				<div class="col">
 					<h1>Tambah User</h1>
