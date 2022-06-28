@@ -7,10 +7,12 @@ use CodeIgniter\RESTful\ResourceController;
 class PerusahaanController extends ResourceController
 {
     private $db;
+    private $session;
 
     public function __construct()
     {
         $this->db = db_connect();
+        $this->session = session();
     }
     /**
      * Return an array of resource objects, themselves in array format

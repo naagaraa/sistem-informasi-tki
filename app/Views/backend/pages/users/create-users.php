@@ -39,6 +39,10 @@
 									<input name="email-user" type="email" class="form-control" id="email-user" placeholder="email">
 								</div>
 								<div class="form-group">
+									<label for="password-user">password</label>
+									<input name="password-user" type="password" class="form-control" id="password-user" placeholder="password">
+								</div>
+								<div class="form-group">
 									<label for="handphone-user">handphone</label>
 									<input name="handphone-user" type="number" class="form-control" id="handphone-user" placeholder="masukan handphone">
 								</div>

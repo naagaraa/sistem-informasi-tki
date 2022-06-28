@@ -7,6 +7,7 @@ use CodeIgniter\RESTful\ResourceController;
 class LokerController extends ResourceController
 {
     private $db;
+    private $session;
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -16,6 +17,8 @@ class LokerController extends ResourceController
     public function __construct()
     {
         $this->db = db_connect();
+        $this->session = session();
+
     }
 
 

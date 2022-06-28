@@ -6,6 +6,19 @@ use App\Controllers\BaseController;
 
 class TransaktionController extends BaseController
 {
+    
+    private $db;
+    private $session;
+
+    /**
+     * load db di constructor
+     */
+    public function __construct()
+    {
+        $this->db = db_connect();
+        $this->session = session();
+    }
+    
     /**
      * show index perusahaan
      *

@@ -32,6 +32,11 @@ class Users extends Migration
                 'unique' => true,
                 'null' => true,
             ],
+            'password_user' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => true,
+            ],
             'handphone_user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 15,
@@ -68,14 +73,14 @@ class Users extends Migration
 
         ]);
         $this->forge->addKey('id_user', true);
-        $this->forge->createTable('tb_user');
+        $this->forge->createTable('tb_users');
 
     }
 
     public function down()
     {
         //
-        $this->forge->dropTable('tb_user');
+        $this->forge->dropTable('tb_users');
 
     }
 }

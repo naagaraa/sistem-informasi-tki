@@ -6,6 +6,19 @@ use CodeIgniter\RESTful\ResourceController;
 
 class DataUjianController extends ResourceController
 {
+    
+    private $db;
+    private $session;
+
+    /**
+     * load db di constructor
+     */
+    public function __construct()
+    {
+        $this->db = db_connect();
+        $this->session = session();
+    }
+    
     /**
      * Return an array of resource objects, themselves in array format
      *

@@ -85,7 +85,10 @@ $routes->post('/users/create', [UsersController::class, 'create']);
 
 // auth
 $routes->get('/login', [LoginController::class, 'index']);
+$routes->post('/login/auth', [LoginController::class, 'auth']);
 $routes->get('/register', [RegisterController::class, 'index']);
+$routes->post('/register/create', [RegisterController::class, 'create']);
+$routes->get('/logout', [LoginController::class, 'logout']);
 
 /*
  * --------------------------------------------------------------------
