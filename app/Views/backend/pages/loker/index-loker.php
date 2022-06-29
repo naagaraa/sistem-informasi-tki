@@ -46,7 +46,7 @@
 												<td><?=  substr( $value->create_at,0,10) ?></td>
 												<td>
 													<a href="#" class="btn btn-danger">close</a>
-													<a href="<?= base_url("loker/edit/0001") ?>" class="btn btn-primary">edit</a>
+													<a href="<?= base_url("loker/show/{$value->uniqid_loker}") ?>" class="btn btn-primary">edit</a>
 													<a href="#" class="btn btn-warning">delete</a>
 												</td>
 											</tr>

@@ -17,15 +17,15 @@ class DashboardController extends BaseController
     {
         $this->db = db_connect();
         $this->session = session();
-        d($this->session->get('login') == null);
-        if ($this->session->get('login') == null) {
-            redirect()->to("login");
-        }
     }
 
     public function index()
     {
-        //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+        // code here
         $data = [
             "title" => "dashboard",
         ];

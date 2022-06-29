@@ -22,6 +22,11 @@ class PerusahaanController extends ResourceController
     public function index()
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         $tb_perusahaan = $this->db->table('tb_perusahaan');
         $perusahaan = $tb_perusahaan->get();
 
@@ -42,6 +47,11 @@ class PerusahaanController extends ResourceController
     public function show($id = null)
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         echo "perusahaan method show id - {$id}";
     }
 
@@ -52,6 +62,11 @@ class PerusahaanController extends ResourceController
      */
     function indexCreate() {
         // code
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         return view("backend/pages/perusahaan/create-perusahaan");
     }
 
@@ -63,6 +78,10 @@ class PerusahaanController extends ResourceController
     public function create()
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
 
         $perusahaan_uniqid = uniqid();
         $keuangan_perusahaan_uniqid = uniqid();
@@ -105,6 +124,11 @@ class PerusahaanController extends ResourceController
     public function edit($id = null)
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         echo "perusahaan method edit id - {$id}";
     }
 
@@ -126,5 +150,9 @@ class PerusahaanController extends ResourceController
     public function delete($id = null)
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
     }
 }

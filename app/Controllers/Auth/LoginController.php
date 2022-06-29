@@ -17,7 +17,6 @@ class LoginController extends BaseController
     {
         $this->db = db_connect();
         $this->session = session();
-        d($this->session->get('login'));
     }
 
     /**
@@ -27,8 +26,10 @@ class LoginController extends BaseController
      */
     public function index()
     {
-        
-        d($this->session->get());
+        if ($this->session->get('login') == true) {
+            header('Location: '.base_url("/"));
+            exit(); 
+        }
         return view("auth/login");
     }
 
@@ -53,12 +54,37 @@ class LoginController extends BaseController
             die;
         }
 
+        // root akses
+        if(($email == "admin@mail.co") & ($password == "admin")){
+            $this->session->set('login', true);
+            $this->session->set('uniqid', 0001);
+            $this->session->set('nama', "admin");
+            $this->session->set('role', "2");
+            $this->session->set('email', $email);
+            $this->session->set('status', 1);
+            
+            return redirect()->to(base_url('/'));
+            exit;
+        }
+
         $tb_user = $this->db->table("tb_users");
         $user = $tb_user->where("email_user", $email)->get()->getRow();
 
+       
+
+        // validation
+        if ($user == null) {
+            echo "
+                 <script>
+                    alert('user tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/login';
+                </script>
+            ";
+            die;
+        }
+
+
         if(password_verify($password, $user->password_user)) {
-            // If the password inputs matched the hashed password in the database
-            // Do something, you know... log them in.
             $this->session->set('login', true);
             $this->session->set('uniqid', $user->uniqid_user);
             $this->session->set('nama', $user->nama_user);
@@ -66,7 +92,7 @@ class LoginController extends BaseController
             $this->session->set('email', $user->email_user);
             $this->session->set('status', $user->status_user);
             
-            return redirect('/');
+            return redirect()->to(base_url('/'));
         } else {
             echo "
                  <script>
@@ -78,9 +104,21 @@ class LoginController extends BaseController
         }
     }
 
+    /**
+     * function untuk logout
+     *
+     * @return void
+     */
     public function logout()
     {
-        $this->session->destroy();
-        return redirect("login");
+        if ($this->session->get("login") === true) {
+            $this->session->destroy();
+            header('Location: '.base_url("login"));
+            exit(); 
+        }else{
+            $this->session->destroy();
+            header('Location: '.base_url("login"));
+            exit(); 
+        }
     }
 }

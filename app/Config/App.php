@@ -25,6 +25,7 @@ class App extends BaseConfig
      * @var string
      */
     public $baseURL = 'http://localhost:8080/';
+    // public $baseURL = 'http://localhost/sistem-informasi-tki/';
 
     /**
      * --------------------------------------------------------------------------
@@ -56,7 +57,8 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $uriProtocol = 'REQUEST_URI';
+    // public $uriProtocol = 'REQUEST_URI'; # code igniter original config
+    public $uriProtocol = 'PATH_INFO';
 
     /**
      * --------------------------------------------------------------------------

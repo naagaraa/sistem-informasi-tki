@@ -25,6 +25,11 @@ class LokerController extends ResourceController
     public function index()
     {
 
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         $tb_loker = $this->db->table("tb_loker");
         $loker = $tb_loker->get();
         //
@@ -44,6 +49,11 @@ class LokerController extends ResourceController
      */
     public function indexCreate()
     {
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         // code here
         $tb_perusahaan = $this->db->table("tb_perusahaan");
         $perusahaan = $tb_perusahaan->select("uniqid_perusahaan,nama_perusahaan, negara_perusahaan")->get();
@@ -64,8 +74,30 @@ class LokerController extends ResourceController
      */
     public function show($id = null)
     {
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
         //
-        echo "loker method show id - {$id}";
+        $tb_loker =  $this->db->table("tb_loker");
+        $loker = $tb_loker->where("uniqid_loker", $id)->get()->getRow();
+
+        if (empty($loker)) {
+            echo "
+                <script>
+                    alert('loker tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/loker';
+                </script>
+            ";
+            die;
+        }
+
+        $data = [
+            "loker" => $loker
+        ];
+
+        return view('backend/pages/loker/edit-loker', $data);
+
     }
 
     /**
@@ -84,6 +116,11 @@ class LokerController extends ResourceController
      */
     public function create()
     {
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         //
         $nama_perusahaan = explode("-", $this->request->getPost("nama-perusahaan"));
         $negara_perusahaan = explode("-", $this->request->getPost("negara-perusahaan"));
@@ -121,8 +158,33 @@ class LokerController extends ResourceController
      */
     public function edit($id = null)
     {
+        $uniqid_loker = $this->request->getPost('uniqid');
+
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
         //
-        echo "loker method edit id - {$id}";
+        $tb_loker =  $this->db->table("tb_loker");
+        $loker = $tb_loker->where("uniqid_loker", $uniqid_loker)->get()->getRow();
+
+        if (empty($loker)) {
+            echo "
+                <script>
+                    alert('loker tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/loker';
+                </script>
+            ";
+            die;
+        }
+
+        $tb_loker->set('nama_posisi', $this->request->getPost('posisi-loker'));
+        $tb_loker->set('jobdesk_deskription', $this->request->getPost('jobsdesk-loker'));
+        $tb_loker->set('kualifikasi_deskription', $this->request->getPost('kualifikasi-loker'));
+        $tb_loker->where('uniqid_loker', $uniqid_loker);
+        $tb_loker->update();
+
+        return redirect()->back()->with('success', 'data berhasil di tambah');
     }
 
     /**

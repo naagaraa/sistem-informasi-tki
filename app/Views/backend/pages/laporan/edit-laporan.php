@@ -10,7 +10,7 @@
 			<!-- Small boxes (Stat box) -->
 			<div class="row">
 				<div class="col">
-					<h1>Create Laporan</h1>
+					<h1>Edit Laporan</h1>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptas omnis quibusdam nihil neque consequatur eius, ipsa similique obcaecati officiis alias dolorum accusantium explicabo dignissimos optio iste aliquam illum aut.</p>
 				</div>
 				<div class="col-12">

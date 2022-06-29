@@ -7,6 +7,7 @@ use CodeIgniter\RESTful\ResourceController;
 class UsersController extends ResourceController
 {
     private $db;
+    private $session;
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -16,11 +17,17 @@ class UsersController extends ResourceController
     public function __construct()
     {
         $this->db = db_connect();
-    } 
+        $this->session = session();
+    }
 
     public function index()
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit();
+        }
+
         $tb_user = $this->db->table("tb_users");
         $users = $tb_user->get();
 
@@ -30,12 +37,16 @@ class UsersController extends ResourceController
         ];
 
         return view('backend/pages/users/index-users', $data);
-
     }
 
     public function indexCreate()
     {
         // code
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit();
+        }
+
         return view('backend/pages/users/create-users');
     }
 
@@ -47,7 +58,29 @@ class UsersController extends ResourceController
     public function show($id = null)
     {
         //
-        echo "users method show id - {$id}";
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit();
+        }
+
+        $tb_user =  $this->db->table("tb_users");
+        $user = $tb_user->where("uniqid_user", $id)->get()->getRow();
+
+        if (empty($user)) {
+            echo "
+                <script>
+                    alert('user tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/users';
+                </script>
+            ";
+            die;
+        }
+
+        $data = [
+            "user" => $user
+        ];
+
+        return view('backend/pages/users/edit-users', $data);
     }
 
     /**
@@ -55,7 +88,8 @@ class UsersController extends ResourceController
      *
      * @return mixed
      */
-    function new () {
+    function new()
+    {
         //
     }
 
@@ -66,10 +100,15 @@ class UsersController extends ResourceController
      */
     public function create()
     {
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit();
+        }
+
         $email = $this->request->getPost("email-user");
         $tb_users = $this->db->table("tb_users");
-        $users = $tb_users->where("email_user",$email)->get()->getResultObject();
-        if(!empty($users)){
+        $users = $tb_users->where("email_user", $email)->get()->getResultObject();
+        if (!empty($users)) {
             echo "
                 <script>
                     alert('email data sudah ada');
@@ -82,9 +121,6 @@ class UsersController extends ResourceController
         $password = $this->request->getPost('password-user');
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-        d($password);
-        d($password_hash);
-        dd(password_verify($password,$password_hash));
         // data users
         $datauser = [
             'uniqid_user' => uniqid(),
@@ -100,7 +136,7 @@ class UsersController extends ResourceController
             'update_at' => date("Y-m-d H:i:s")
         ];
 
-       
+
         $tb_users->insert($datauser);
 
         return redirect()->back()->with('success', 'data berhasil di tambah');
@@ -114,7 +150,34 @@ class UsersController extends ResourceController
     public function edit($id = null)
     {
         //
-        echo "users method edit id - {$id}";
+        $uniqid_user = $this->request->getPost('uniqid');
+
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit();
+        }
+
+        $tb_user =  $this->db->table("tb_users");
+        $user = $tb_user->where("uniqid_user", $uniqid_user)->get()->getRow();
+
+        if (empty($user)) {
+            echo "
+                <script>
+                    alert('user tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/users';
+                </script>
+            ";
+            die;
+        }
+
+        $tb_user->set('nama_user', $this->request->getPost('nama-user'));
+        $tb_user->set('email_user', $this->request->getPost('email-user'));
+        $tb_user->set('handphone_user', $this->request->getPost('handphone-user'));
+        $tb_user->set('alamat_user', $this->request->getPost('alamat-user'));
+        $tb_user->where('uniqid_user', $uniqid_user);
+        $tb_user->update();
+
+        return redirect()->back()->with('success', 'data berhasil di tambah');
     }
 
     /**

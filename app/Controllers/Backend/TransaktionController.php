@@ -27,6 +27,11 @@ class TransaktionController extends BaseController
     public function indexPerusahaan()
     {
         // code 
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         return view("backend/pages/transaksi-perusahaan/index-transaksi-perusahaan");
     }
 
@@ -38,6 +43,11 @@ class TransaktionController extends BaseController
     public function indexUsers()
     {
         // code 
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         return view("backend/pages/transaksi-users/index-transaksi-users");
     }
 
@@ -48,6 +58,11 @@ class TransaktionController extends BaseController
      */
     public function showTransaksiPerusahaan($id)
     {
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         echo "transaksi perusahaan - {$id}";
         $id_keuangan_perusahaan = $id;
     }
@@ -60,6 +75,11 @@ class TransaktionController extends BaseController
      */
     public function showTransaksiUsers($id)
     {
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+        
         echo "transaksi users - {$id}";
         $id_keuangan_user = $id;
     }

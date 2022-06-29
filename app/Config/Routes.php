@@ -55,7 +55,7 @@ $routes->get('/saldo/users', [SaldoUsersController::class, 'index']);
 // loker
 $routes->get('/loker', [LokerController::class, 'index']);
 $routes->get('/loker/show/(:any)', [LokerController::class, 'show']);
-$routes->get('/loker/edit/(:any)', [LokerController::class, 'edit']);
+$routes->post('/loker/edit', [LokerController::class, 'edit']);
 $routes->get('/loker/create', [LokerController::class, 'indexCreate']);
 $routes->post('/loker/create', [LokerController::class, 'create']);
 
@@ -79,7 +79,7 @@ $routes->get('/transaksi/users/(:any)', [TransaktionController::class, 'showTran
 // users
 $routes->get('/users', [UsersController::class, 'index']);
 $routes->get('/users/show/(:any)', [UsersController::class, 'show']);
-$routes->get('/users/edit/(:any)', [UsersController::class, 'edit']);
+$routes->post('/users/edit/', [UsersController::class, 'edit']);
 $routes->get('/users/create', [UsersController::class, 'indexCreate']);
 $routes->post('/users/create', [UsersController::class, 'create']);
 

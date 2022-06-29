@@ -22,6 +22,11 @@ class LaporanController extends BaseController
     public function index()
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+        
         $data = [
             "title" => "laporan",
         ];

@@ -26,6 +26,11 @@ class SaldoPerusahaanController extends ResourceController
     public function index()
     {
         //
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
         return view("backend/pages/saldo-perusahaan/saldo-perusahaan");
     }
 
@@ -76,6 +81,7 @@ class SaldoPerusahaanController extends ResourceController
     public function update($id = null)
     {
         //
+        
     }
 
     /**

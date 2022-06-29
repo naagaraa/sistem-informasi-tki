@@ -38,16 +38,16 @@
 										<?php foreach ($users as $key => $value) : ?>
 										<tr>
 											<td><?= $number++; ?></td>
-											<td><?= $value->nama_user ?></td>
+											<td><?= $value->nama_user == "" ? "-" : $value->nama_user ?></td>
 											<td><?= $value->email_user ?></td>
-											<td><?= $value->handphone_user ?></td>
+											<td><?= $value->handphone_user == "" ? "-" : $value->handphone_user ?></td>
 											<td><?= $value->role_user  == 1 ? "TKI" : "Pegawai" ?></td>
 											<td><?= substr($value->update_at,0,10) ?></td>
 											<td>
-												<a href="<?= base_url("users/edit/0001") ?>" class="btn btn-primary">
+												<a href="<?= base_url("users/show/{$value->uniqid_user}") ?>" class="btn btn-primary">
 													edit
 												</a>
-												<a href="#" class="btn btn-danger">
+												<a href="<?= base_url("users/delete/{$value->uniqid_user}") ?>" class="btn btn-danger">
 													delete
 												</a>
 											</td>
