@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="<?=base_url('plugins/daterangepicker/daterangepicker.css')?>">
   <!-- summernote -->
   <link rel="stylesheet" href="<?=base_url('plugins/summernote/summernote-bs4.min.css')?>">
+  <!-- data tables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!-- wrapper -->

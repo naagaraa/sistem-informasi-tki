@@ -45,9 +45,14 @@
 												<td><?= $value->status_loker == 1 ? "open" : "close" ?></td>
 												<td><?=  substr( $value->create_at,0,10) ?></td>
 												<td>
+													<?php if(session("role") == 1):?>
+													<a href="#" class="btn btn-primary">Daftar</a>
+													<?php endif;?>
+													<?php if(session("role") == 2): ?>
 													<a href="#" class="btn btn-danger">close</a>
 													<a href="<?= base_url("loker/show/{$value->uniqid_loker}") ?>" class="btn btn-primary">edit</a>
 													<a href="#" class="btn btn-warning">delete</a>
+													<?php endif;?>
 												</td>
 											</tr>
 										<?php endforeach; ?>

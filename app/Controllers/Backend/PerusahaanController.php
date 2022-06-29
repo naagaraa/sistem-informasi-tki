@@ -47,12 +47,32 @@ class PerusahaanController extends ResourceController
     public function show($id = null)
     {
         //
+        $uniqid_perusahaan = $id;
+
         if ($this->session->get('login') === null) {
             return redirect()->to(base_url("login"));
             exit(); 
         }
 
-        echo "perusahaan method show id - {$id}";
+        $tb_perusahaan =  $this->db->table("tb_perusahaan");
+        $perusahaan = $tb_perusahaan->where("uniqid_perusahaan", $uniqid_perusahaan)->get()->getRow();
+
+        if (empty($perusahaan)) {
+            echo "
+                <script>
+                    alert('perusahaan tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/perusahaan';
+                </script>
+            ";
+            die;
+        }
+
+        $data = [
+            'perusahaan' => $perusahaan,
+        ];
+
+        return view("backend/pages/perusahaan/edit-perusahaan", $data);
+        
     }
 
     /**
@@ -124,12 +144,34 @@ class PerusahaanController extends ResourceController
     public function edit($id = null)
     {
         //
+        $uniqid_perusahaan = $this->request->getPost('uniqid');
+
         if ($this->session->get('login') === null) {
             return redirect()->to(base_url("login"));
             exit(); 
         }
 
-        echo "perusahaan method edit id - {$id}";
+        $tb_perusahaan =  $this->db->table("tb_perusahaan");
+        $perusahaan = $tb_perusahaan->where("uniqid_perusahaan", $uniqid_perusahaan)->get()->getRow();
+
+        if (empty($perusahaan)) {
+            echo "
+                <script>
+                    alert('perusahaan tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/perusahaan';
+                </script>
+            ";
+            die;
+        }
+
+        $tb_perusahaan->set('nama_perusahaan', $this->request->getPost('nama-perusahaan'));
+        $tb_perusahaan->set('alamat_perusahaan', $this->request->getPost('alamat-perusahaan'));
+        $tb_perusahaan->set('negara_perusahaan', $this->request->getPost('negara-perusahaan'));
+        $tb_perusahaan->set('deskripsi_perusahaan', $this->request->getPost('deskripsi-perusahaan'));
+        $tb_perusahaan->where('uniqid_perusahaan', $uniqid_perusahaan);
+        $tb_perusahaan->update();
+
+        return redirect()->back()->with('success', 'data berhasil di tambah');
     }
 
     /**
@@ -154,5 +196,8 @@ class PerusahaanController extends ResourceController
             return redirect()->to(base_url("login"));
             exit(); 
         }
+
+        $perusahaan_uniqid = $id;
+        d($perusahaan_uniqid);
     }
 }

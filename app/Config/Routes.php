@@ -55,6 +55,7 @@ $routes->get('/saldo/users', [SaldoUsersController::class, 'index']);
 // loker
 $routes->get('/loker', [LokerController::class, 'index']);
 $routes->get('/loker/show/(:any)', [LokerController::class, 'show']);
+$routes->get('/loker/delete/(:any)', [LokerController::class, 'delete']);
 $routes->post('/loker/edit', [LokerController::class, 'edit']);
 $routes->get('/loker/create', [LokerController::class, 'indexCreate']);
 $routes->post('/loker/create', [LokerController::class, 'create']);
@@ -62,7 +63,8 @@ $routes->post('/loker/create', [LokerController::class, 'create']);
 // perusahaan
 $routes->get('/perusahaan', [PerusahaanController::class, 'index']);
 $routes->get('/perusahaan/show/(:any)', [PerusahaanController::class, 'show']);
-$routes->get('/perusahaan/edit/(:any)', [PerusahaanController::class, 'edit']);
+$routes->get('/perusahaan/delete/(:any)', [PerusahaanController::class, 'delete']);
+$routes->post('/perusahaan/edit', [PerusahaanController::class, 'edit']);
 $routes->get('/perusahaan/create', [PerusahaanController::class, 'indexCreate']);
 $routes->post('/perusahaan/create', [PerusahaanController::class, 'create']);
 

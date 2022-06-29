@@ -27,7 +27,9 @@
 										<th>Perusahaan</th>
 										<th>Negara</th>
 										<th>Alamat</th>
+										<?php if(session("role") == 2): ?>
 										<th>Action</th>
+										<?php endif;?>
 									</tr>
 								</thead>
 								<tbody>
@@ -39,11 +41,13 @@
 										<td><?= $value->nama_perusahaan ?></td>
 										<td><?= $value->negara_perusahaan ?></td>
 										<td><?= $value->alamat_perusahaan ?></td>
+										<?php if(session("role") == 2): ?>
 										<td>
 											<a href="#" class="btn btn-primary">Detail</a>
-											<a href="#" class="btn btn-warning">Edit</a>
-											<a href="#" class="btn btn-danger">Delete</a>
+											<a href="<?= base_url("perusahaan/show/{$value->uniqid_perusahaan}") ?>" class="btn btn-warning">Edit</a>
+											<a href="<?= base_url("perusahaan/delete/{$value->uniqid_perusahaan}") ?>" class="btn btn-danger">Delete</a>
 										</td>
+										<?php endif;?>
 									</tr>
 									<?php endforeach; ?>
 									<?php else : ?>

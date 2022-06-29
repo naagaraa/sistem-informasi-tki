@@ -205,5 +205,13 @@ class LokerController extends ResourceController
     public function delete($id = null)
     {
         //
+         if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
+        $loker_uniqid = $id;
+        d($loker_uniqid);
+
     }
 }
