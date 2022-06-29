@@ -112,6 +112,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?=base_url('pendaftaran')?>" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                TKI terdaftar
+              </p>
+            </a>
+          </li>
           
           <?php endif;?>
           <li class="nav-header">General</li>

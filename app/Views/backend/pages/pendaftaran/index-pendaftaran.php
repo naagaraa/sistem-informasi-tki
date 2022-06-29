@@ -11,7 +11,7 @@
 			<!-- Small boxes (Stat box) -->
 			<div class="row">
 				<div class="col">
-					<h1>Loker</h1>
+					<h1>TKI terdaftar</h1>
 					<p>informasi lowongan kerja</p>
 				</div>
 				<div class="col-12">
@@ -25,37 +25,22 @@
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>posisi</th>
-										<th>Perusahaan</th>
-										<th>Lokasi</th>
-										<th>status</th>
+										<th>Nama TKI</th>
 										<th>update at</th>
 										<th>action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php if (!empty($loker)) : ?>
+									<?php if (!empty($pendaftaran)) : ?>
 										<?php $number = 1; ?>
-										<?php foreach ($loker as $key => $value) : ?>
+										<?php foreach ($pendaftaran as $key => $value) : ?>
 											<tr>
 												<td><?= $number++ ?></td>
-												<td><?= $value->nama_posisi ?></td>
-												<td><?= $value->nama_perusahaan ?></td>
-												<td><?= $value->negara_perusahaan ?></td>
-												<td><?= $value->status_loker == 1 ? "open" : "close" ?></td>
+												<td><?= $value->nama_user ?></td>
 												<td><?=  substr( $value->create_at,0,10) ?></td>
 												<td>
-													<?php if(session("role") == 1):?>
-														<form action="<?= base_url("daftar") ?>" method="POST">
-														<?= csrf_field() ?>
-															<input type="hidden" name="uniqid" value="<?= $value->uniqid_loker ?>">
-															<button type="submit" class="btn btn-primary">Daftar</button>
-													</form>
-													<?php endif;?>
 													<?php if(session("role") == 2): ?>
-													<a href="#" class="btn btn-danger">close</a>
-													<a href="<?= base_url("loker/show/{$value->uniqid_loker}") ?>" class="btn btn-primary">edit</a>
-													<a href="<?= base_url("loker/delete/{$value->uniqid_loker}") ?>" class="btn btn-warning">delete</a>
+													<a href="<?= base_url("pendaftaran/delete/{$value->uniqid_tki_terdaftar}") ?>" class="btn btn-warning">delete</a>
 													<?php endif;?>
 												</td>
 											</tr>
@@ -66,11 +51,6 @@
 											<td>No Data</td>
 											<td>No Data</td>
 											<td>No Data</td>
-											<td>No Data</td>
-											<td>No Data</td>
-											<td>
-												No Data
-											</td>
 										</tr>
 									<?php endif; ?>
 							</table>

@@ -7,6 +7,7 @@ use App\Controllers\Auth\RegisterController;
 use App\Controllers\Backend\LokerController;
 use App\Controllers\Backend\UsersController;
 use App\Controllers\Backend\LaporanController;
+use App\Controllers\Backend\DaftarTkiController;
 use App\Controllers\Backend\DashboardController;
 use App\Controllers\Backend\PerusahaanController;
 use App\Controllers\Backend\SaldoUsersController;
@@ -59,6 +60,11 @@ $routes->get('/loker/delete/(:any)', [LokerController::class, 'delete']);
 $routes->post('/loker/edit', [LokerController::class, 'edit']);
 $routes->get('/loker/create', [LokerController::class, 'indexCreate']);
 $routes->post('/loker/create', [LokerController::class, 'create']);
+
+// daftar loker
+$routes->get('/pendaftaran', [DaftarTkiController::class, 'index']);
+$routes->get('/pendaftaran/delete/(:any)', [DaftarTkiController::class, 'delete']);
+$routes->post('/daftar', [DaftarTkiController::class, 'create']);
 
 // perusahaan
 $routes->get('/perusahaan', [PerusahaanController::class, 'index']);

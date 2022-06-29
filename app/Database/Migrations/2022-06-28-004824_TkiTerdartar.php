@@ -23,7 +23,7 @@ class TkiTerdartar extends Migration
             ],
             'uniqid_loker' => [
                 'type' => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '100b',
             ],
             'uniqid_user' => [
                 'type' => 'VARCHAR',

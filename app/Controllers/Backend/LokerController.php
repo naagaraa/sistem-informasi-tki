@@ -210,8 +210,30 @@ class LokerController extends ResourceController
             exit(); 
         }
 
-        $loker_uniqid = $id;
-        d($loker_uniqid);
+        $uniqid_loker = $id;
+
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
+        $tb_loker =  $this->db->table("tb_loker");
+        $loker = $tb_loker->where("uniqid_loker", $uniqid_loker)->get()->getRow();
+
+        if (empty($loker)) {
+            echo "
+                <script>
+                    alert('loker tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/loker';
+                </script>
+            ";
+            die;
+        }
+
+        $tb_loker->where('uniqid_loker', $uniqid_loker);
+        $tb_loker->delete();
+
+        return redirect()->to(base_url("loker"));
 
     }
 }

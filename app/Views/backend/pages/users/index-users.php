@@ -47,9 +47,9 @@
 												<a href="<?= base_url("users/show/{$value->uniqid_user}") ?>" class="btn btn-primary">
 													edit
 												</a>
-												<a href="<?= base_url("users/delete/{$value->uniqid_user}") ?>" class="btn btn-danger">
+												<!-- <a href="<?= base_url("users/delete/{$value->uniqid_user}") ?>" class="btn btn-danger">
 													delete
-												</a>
+												</a> -->
 											</td>
 										</tr>
 										<?php endforeach; ?>

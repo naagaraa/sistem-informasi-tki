@@ -163,10 +163,10 @@ class PerusahaanController extends ResourceController
             ";
             die;
         }
-
+        
         $tb_perusahaan->set('nama_perusahaan', $this->request->getPost('nama-perusahaan'));
         $tb_perusahaan->set('alamat_perusahaan', $this->request->getPost('alamat-perusahaan'));
-        $tb_perusahaan->set('negara_perusahaan', $this->request->getPost('negara-perusahaan'));
+        $tb_perusahaan->set('negara_perusahaan', $this->request->getPost('nama-negara'));
         $tb_perusahaan->set('deskripsi_perusahaan', $this->request->getPost('deskripsi-perusahaan'));
         $tb_perusahaan->where('uniqid_perusahaan', $uniqid_perusahaan);
         $tb_perusahaan->update();
@@ -197,7 +197,29 @@ class PerusahaanController extends ResourceController
             exit(); 
         }
 
-        $perusahaan_uniqid = $id;
-        d($perusahaan_uniqid);
+        $uniqid_perusahaan = $id;
+
+        if ($this->session->get('login') === null) {
+            return redirect()->to(base_url("login"));
+            exit(); 
+        }
+
+        $tb_perusahaan =  $this->db->table("tb_perusahaan");
+        $perusahaan = $tb_perusahaan->where("uniqid_perusahaan", $uniqid_perusahaan)->get()->getRow();
+
+        if (empty($perusahaan)) {
+            echo "
+                <script>
+                    alert('perusahaan tidak ditemukan');
+                    window.location.href = 'http://localhost:8080/perusahaan';
+                </script>
+            ";
+            die;
+        }
+
+        $tb_perusahaan->where('uniqid_perusahaan', $uniqid_perusahaan);
+        $tb_perusahaan->delete();
+
+        return redirect()->to(base_url("perusahaan"));
     }
 }
